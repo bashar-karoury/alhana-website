@@ -1,0 +1,1585 @@
+[
+  {
+    "code": "EES",
+    "slug": "ees",
+    "category": "bag-making",
+    "image": "ees.jpg",
+    "name": "Double layer four-track T-shirt bag making machine",
+    "short": {
+      "en": "Double layer, 4-line T-shirt bag cutting & sealing with conveyor",
+      "ar": "ماكينة فانيلة مزدوجة الطبقة بأربعة خطوط مع سير ناقل"
+    },
+    "headline": {
+      "en": "Up to 120 pcs/min",
+      "ar": "حتى 120 قطعة/دقيقة"
+    },
+    "models": {
+      "en": "Models EES-28 · EES-32 · EES-42",
+      "ar": "الموديلات EES-28 · EES-32 · EES-42"
+    },
+    "features": {
+      "en": [
+        "Adjustable heat needle for auto-stacked T-shirt bags",
+        "Individual feeding device",
+        "Makes T-shirt, flat and bottom-seal bags"
+      ],
+      "ar": [
+        "إبرة حرارية قابلة للضبط لتكديس أكياس الفانيلة تلقائياً",
+        "وحدة تغذية مستقلة",
+        "تصنع أكياس الفانيلة والأكياس المسطحة وأكياس اللحام السفلي"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width (max)",
+          "ar": "أقصى عرض للكيس"
+        },
+        "value": {
+          "en": "300 / 350 / 450 mm × 2",
+          "ar": "300 / 350 / 450 مم × 2"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length",
+          "ar": "طول الكيس"
+        },
+        "value": {
+          "en": "Up to 910 / 1016 / 1270 mm",
+          "ar": "حتى 910 / 1016 / 1270 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.008 – 0.1 mm",
+          "ar": "0.008 – 0.1 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 120 pcs/min",
+          "ar": "30 – 120 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Power required",
+          "ar": "القدرة المطلوبة"
+        },
+        "value": {
+          "en": "7 / 8 / 9 kW",
+          "ar": "7 / 8 / 9 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "EESU",
+    "slug": "eesu",
+    "category": "bag-making",
+    "image": "eesu.jpg",
+    "name": "Double layer six-line bottom sealing machine with auto punch",
+    "short": {
+      "en": "Double layer, 6-line bottom sealing with auto punch",
+      "ar": "مزدوجة الطبقة بستة خطوط، لحام سفلي مع تخريم تلقائي"
+    },
+    "headline": {
+      "en": "Up to 160 pcs/min",
+      "ar": "حتى 160 قطعة/دقيقة"
+    },
+    "models": {
+      "en": "Models EESU-32 · EESU-42",
+      "ar": "الموديلات EESU-32 · EESU-42"
+    },
+    "features": {
+      "en": [
+        "Adjustable heat needle for auto stacking",
+        "Individual feeding device",
+        "T-shirt, flat and bottom-seal bags"
+      ],
+      "ar": [
+        "إبرة حرارية قابلة للضبط للتكديس التلقائي",
+        "وحدة تغذية مستقلة",
+        "أكياس فانيلة ومسطحة وبلحام سفلي"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width (max)",
+          "ar": "أقصى عرض للكيس"
+        },
+        "value": {
+          "en": "355 / 450 mm × 2",
+          "ar": "355 / 450 مم × 2"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length",
+          "ar": "طول الكيس"
+        },
+        "value": {
+          "en": "Up to 1016 / 1270 mm",
+          "ar": "حتى 1016 / 1270 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.008 – 0.1 mm",
+          "ar": "0.008 – 0.1 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 160 pcs/min",
+          "ar": "30 – 160 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Gross weight",
+          "ar": "الوزن الإجمالي"
+        },
+        "value": {
+          "en": "1550 / 1750 kg",
+          "ar": "1550 / 1750 كغ"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ESH",
+    "slug": "esh",
+    "category": "bag-making",
+    "image": "esh.jpg",
+    "name": "Automatic laundry bag and winder making machine",
+    "short": {
+      "en": "Laundry & sufra bags, perforated bags on roll with winder",
+      "ar": "أكياس الغسيل والسفرة والأكياس المخرّمة على رول مع لفّاف"
+    },
+    "headline": {
+      "en": "Up to 180 pcs/min",
+      "ar": "حتى 180 قطعة/دقيقة"
+    },
+    "models": {
+      "en": "Models ESH-20 · ESH-32 · ESH-42",
+      "ar": "الموديلات ESH-20 · ESH-32 · ESH-42"
+    },
+    "features": {
+      "en": [
+        "Servo motor control with print photocell",
+        "Bottom-seal and laundry bag devices",
+        "Options: hole punch, EPC, circular perforator, auto winder"
+      ],
+      "ar": [
+        "تحكم بمحرك سيرفو مع خلية ضوئية للطباعة",
+        "وحدات لأكياس اللحام السفلي وأكياس الغسيل",
+        "إضافات: تخريم، EPC، مخرّم دائري، لفّاف أوتوماتيكي"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width",
+          "ar": "عرض الكيس"
+        },
+        "value": {
+          "en": "60 – 460 / 760 / 1000 mm",
+          "ar": "60 – 460 / 760 / 1000 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length",
+          "ar": "طول الكيس"
+        },
+        "value": {
+          "en": "60 – 800 mm",
+          "ar": "60 – 800 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.012 – 0.2 mm",
+          "ar": "0.012 – 0.2 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 180 pcs/min",
+          "ar": "30 – 180 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Power required",
+          "ar": "القدرة المطلوبة"
+        },
+        "value": {
+          "en": "5 kW",
+          "ar": "5 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ESF",
+    "slug": "esf",
+    "category": "bag-making",
+    "image": "esf.jpg",
+    "name": "Tensionless heavy-duty sealing and cutting machine",
+    "short": {
+      "en": "Tensionless heavy-duty sealing & cutting for large bags",
+      "ar": "لحام وقص ثقيل بدون شد للأكياس الكبيرة"
+    },
+    "headline": {
+      "en": "Film up to 0.3 mm",
+      "ar": "فيلم حتى 0.3 مم"
+    },
+    "models": {
+      "en": "Models ESF-32 · ESF-42",
+      "ar": "الموديلات ESF-32 · ESF-42"
+    },
+    "features": {
+      "en": [
+        "Fly-knife cutting — no blade sharpening",
+        "Auto lifting system for easy seal adjustment",
+        "Built for large, thick bags"
+      ],
+      "ar": [
+        "قص بسكين طائرة — بدون الحاجة لسنّ الشفرة",
+        "نظام رفع أوتوماتيكي لسهولة ضبط اللحام",
+        "مصممة للأكياس الكبيرة والسميكة"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width (max)",
+          "ar": "أقصى عرض للكيس"
+        },
+        "value": {
+          "en": "85 / 95 cm",
+          "ar": "85 / 95 سم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.1 – 0.3 mm",
+          "ar": "0.1 – 0.3 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 100 pcs/min",
+          "ar": "30 – 100 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Heater",
+          "ar": "السخان"
+        },
+        "value": {
+          "en": "11 / 13 kW",
+          "ar": "11 / 13 كيلوواط"
+        }
+      },
+      {
+        "label": {
+          "en": "Gross weight",
+          "ar": "الوزن الإجمالي"
+        },
+        "value": {
+          "en": "2100 / 2300 kg",
+          "ar": "2100 / 2300 كغ"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ESHA",
+    "slug": "esha",
+    "category": "bag-making",
+    "image": "esha.jpg",
+    "name": "Coreless bags-on-roll machine with auto folding and rewinder",
+    "short": {
+      "en": "Single-line coreless bags on roll, auto folding & reel change",
+      "ar": "أكياس على رول بدون كور بخط واحد مع طي وتبديل رول تلقائي"
+    },
+    "headline": {
+      "en": "60 m/min",
+      "ar": "60 م/دقيقة"
+    },
+    "models": {
+      "en": "Models ESHA-32 · ESHA-42",
+      "ar": "الموديلات ESHA-32 · ESHA-42"
+    },
+    "features": {
+      "en": [
+        "Servo controller system",
+        "Double-shaft automatic coreless roll change",
+        "C-type, E-type, garbage bags and sufra on roll"
+      ],
+      "ar": [
+        "نظام تحكم سيرفو",
+        "تبديل تلقائي للرولات بعمودين بدون كور",
+        "أكياس C و E وأكياس النفايات والسفرة على رول"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width (max)",
+          "ar": "أقصى عرض للكيس"
+        },
+        "value": {
+          "en": "750 / 1000 mm",
+          "ar": "750 / 1000 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length (max)",
+          "ar": "أقصى طول للكيس"
+        },
+        "value": {
+          "en": "1350 / 1500 mm",
+          "ar": "1350 / 1500 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.008 – 0.1 mm",
+          "ar": "0.008 – 0.1 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 120 pcs/min",
+          "ar": "30 – 120 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Power required",
+          "ar": "القدرة المطلوبة"
+        },
+        "value": {
+          "en": "7 / 8 kW",
+          "ar": "7 / 8 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "DSHA",
+    "slug": "dsha",
+    "category": "bag-making",
+    "image": "dsha.jpg",
+    "name": "High-speed two-line coreless bags-on-roll machine",
+    "short": {
+      "en": "2-line coreless bags on roll with in-line triangle folding",
+      "ar": "أكياس على رول بدون كور بخطين مع طي مثلثي مدمج"
+    },
+    "headline": {
+      "en": "30 – 120 m/min per line",
+      "ar": "30 – 120 م/دقيقة لكل خط"
+    },
+    "models": {
+      "en": "Model DSHA-32",
+      "ar": "الموديل DSHA-32"
+    },
+    "features": {
+      "en": [
+        "Japanese servo motors and drivers",
+        "In-line triangle folding for star-seal bags",
+        "SICK photocell, touch-screen length & speed"
+      ],
+      "ar": [
+        "محركات ومشغلات سيرفو يابانية",
+        "طي مثلثي مدمج لأكياس اللحام النجمي",
+        "خلية ضوئية SICK وشاشة لمس لضبط الطول والسرعة"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Film roll width",
+          "ar": "عرض رول الفيلم"
+        },
+        "value": {
+          "en": "Max 30\" × 2",
+          "ar": "حتى 30 بوصة × 2"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length",
+          "ar": "طول الكيس"
+        },
+        "value": {
+          "en": "Max 1100 mm",
+          "ar": "حتى 1100 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 120 m/min/line",
+          "ar": "30 – 120 م/دقيقة لكل خط"
+        }
+      },
+      {
+        "label": {
+          "en": "Power required",
+          "ar": "القدرة المطلوبة"
+        },
+        "value": {
+          "en": "7 kW",
+          "ar": "7 كيلوواط"
+        }
+      },
+      {
+        "label": {
+          "en": "Dimensions",
+          "ar": "الأبعاد"
+        },
+        "value": {
+          "en": "550 × 185 × 190 cm",
+          "ar": "550 × 185 × 190 سم"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ESV",
+    "slug": "esv",
+    "category": "bag-making",
+    "image": "esv.jpg",
+    "name": "High-speed cutting and sealing machine with double photocell",
+    "short": {
+      "en": "High-speed cutting & sealing with double photocell",
+      "ar": "قص ولحام عالي السرعة بخلية ضوئية مزدوجة"
+    },
+    "headline": {
+      "en": "Up to 180 pcs/min",
+      "ar": "حتى 180 قطعة/دقيقة"
+    },
+    "models": {
+      "en": "Models ESV-20 · ESV-32 · ESV-42",
+      "ar": "الموديلات ESV-20 · ESV-32 · ESV-42"
+    },
+    "features": {
+      "en": [
+        "Servo-controlled outfeed roller for precise bag size",
+        "Brass-alloy side-seal hot blade",
+        "Photocell stops the line if print registration fails"
+      ],
+      "ar": [
+        "أسطوانة سحب بمحرك سيرفو لمقاس كيس دقيق",
+        "سكين لحام جانبي من سبيكة النحاس",
+        "خلية ضوئية توقف الخط عند خطأ تسجيل الطباعة"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag length",
+          "ar": "طول الكيس"
+        },
+        "value": {
+          "en": "80 – 460 / 760 / 1000 mm",
+          "ar": "80 – 460 / 760 / 1000 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.012 – 0.2 mm",
+          "ar": "0.012 – 0.2 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Speed",
+          "ar": "السرعة"
+        },
+        "value": {
+          "en": "30 – 180 pcs/min",
+          "ar": "30 – 180 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Heater",
+          "ar": "السخان"
+        },
+        "value": {
+          "en": "2.3 / 2.8 / 3.3 kW",
+          "ar": "2.3 / 2.8 / 3.3 كيلوواط"
+        }
+      },
+      {
+        "label": {
+          "en": "Power required",
+          "ar": "القدرة المطلوبة"
+        },
+        "value": {
+          "en": "5 kW",
+          "ar": "5 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "SM",
+    "slug": "sm",
+    "category": "bag-making",
+    "image": "sm.jpg",
+    "name": "Fully automatic loop handle, die-cut and draw-tape bag machine",
+    "short": {
+      "en": "Loop handle, die-cut handle and draw-tape bags",
+      "ar": "أكياس بمقبض حلقي ومقبض مقصوص وبرباط"
+    },
+    "headline": {
+      "en": "Up to 220 pcs/min",
+      "ar": "حتى 220 قطعة/دقيقة"
+    },
+    "models": {
+      "en": "Model SM-1000LF-SV",
+      "ar": "الموديل SM-1000LF-SV"
+    },
+    "features": {
+      "en": [
+        "Motion controller with length, speed and mark sensor control",
+        "SICK mark sensor, Italian conveyor belts",
+        "EPC on the unwind unit"
+      ],
+      "ar": [
+        "وحدة تحكم بالحركة لضبط الطول والسرعة وحساس العلامة",
+        "حساس علامة SICK وسيور ناقلة إيطالية",
+        "نظام EPC في وحدة فك الرول"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Bag width (max)",
+          "ar": "أقصى عرض للكيس"
+        },
+        "value": {
+          "en": "1000 mm",
+          "ar": "1000 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Bag length (max)",
+          "ar": "أقصى طول للكيس"
+        },
+        "value": {
+          "en": "1100 mm",
+          "ar": "1100 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Film thickness",
+          "ar": "سماكة الفيلم"
+        },
+        "value": {
+          "en": "0.007 – 0.15 mm",
+          "ar": "0.007 – 0.15 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Side-weld bags",
+          "ar": "أكياس اللحام الجانبي"
+        },
+        "value": {
+          "en": "60 – 220 pcs/min",
+          "ar": "60 – 220 قطعة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Loop handle bags",
+          "ar": "أكياس المقبض الحلقي"
+        },
+        "value": {
+          "en": "Up to 80 pcs/min",
+          "ar": "حتى 80 قطعة/دقيقة"
+        }
+      }
+    ]
+  },
+  {
+    "code": "MT",
+    "slug": "mt",
+    "category": "film-blowing",
+    "image": "mt.jpg",
+    "name": "MT mini type blown film machine (mono layer)",
+    "short": {
+      "en": "Mini mono-layer blown film on a single platform",
+      "ar": "ماكينة نفخ أفلام صغيرة أحادية الطبقة على منصة واحدة"
+    },
+    "headline": {
+      "en": "20 – 60 kg/h",
+      "ar": "20 – 60 كغ/ساعة"
+    },
+    "models": {
+      "en": "Models MT30 · MT40 · MT45 · MT55",
+      "ar": "الموديلات MT30 · MT40 · MT45 · MT55"
+    },
+    "features": {
+      "en": [
+        "Single-platform design saves floor space",
+        "For T-shirt, shopping, bottom-seal bags and bags on roll",
+        "Adjustable tower height"
+      ],
+      "ar": [
+        "تصميم على منصة واحدة لتوفير المساحة",
+        "لأكياس الفانيلة والتسوق واللحام السفلي والأكياس على رول",
+        "برج قابل لضبط الارتفاع"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "Φ30 – Φ55",
+          "ar": "Φ30 – Φ55"
+        }
+      },
+      {
+        "label": {
+          "en": "Max film width",
+          "ar": "أقصى عرض للفيلم"
+        },
+        "value": {
+          "en": "300 – 900 mm",
+          "ar": "300 – 900 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Max output",
+          "ar": "أقصى إنتاجية"
+        },
+        "value": {
+          "en": "20 – 60 kg/h",
+          "ar": "20 – 60 كغ/ساعة"
+        }
+      },
+      {
+        "label": {
+          "en": "Materials",
+          "ar": "المواد"
+        },
+        "value": {
+          "en": "HDPE / LDPE / LLDPE",
+          "ar": "HDPE / LDPE / LLDPE"
+        }
+      }
+    ]
+  },
+  {
+    "code": "GB",
+    "slug": "gb",
+    "category": "film-blowing",
+    "image": "gb.jpg",
+    "name": "GB general type blown film machine",
+    "short": {
+      "en": "General-type blown film line",
+      "ar": "خط نفخ أفلام من النوع العام"
+    },
+    "headline": {
+      "en": "Up to 120 kg/h",
+      "ar": "حتى 120 كغ/ساعة"
+    },
+    "models": {
+      "en": "Models GB40 · GB45 · GB55 · GB65",
+      "ar": "الموديلات GB40 · GB45 · GB55 · GB65"
+    },
+    "features": {
+      "en": [
+        "Low energy consumption, high output",
+        "Gearbox with forced lubrication and oil cooler",
+        "Adjustable nip roller height"
+      ],
+      "ar": [
+        "استهلاك طاقة منخفض وإنتاجية عالية",
+        "علبة تروس بتزييت قسري ومبرد زيت",
+        "ارتفاع أسطوانة الضغط قابل للضبط"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Max film width",
+          "ar": "أقصى عرض للفيلم"
+        },
+        "value": {
+          "en": "600 – 1200 mm",
+          "ar": "600 – 1200 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Output (LDPE)",
+          "ar": "الإنتاجية (LDPE)"
+        },
+        "value": {
+          "en": "40 – 120 kg/h",
+          "ar": "40 – 120 كغ/ساعة"
+        }
+      },
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "φ42 – φ65, L/D 28:1",
+          "ar": "φ42 – φ65، L/D 28:1"
+        }
+      },
+      {
+        "label": {
+          "en": "Max power",
+          "ar": "أقصى قدرة"
+        },
+        "value": {
+          "en": "25 – 65 kW",
+          "ar": "25 – 65 كيلوواط"
+        }
+      },
+      {
+        "label": {
+          "en": "Materials",
+          "ar": "المواد"
+        },
+        "value": {
+          "en": "LDPE / HDPE / LLDPE / MDPE / EVA",
+          "ar": "LDPE / HDPE / LLDPE / MDPE / EVA"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ST",
+    "slug": "st",
+    "category": "film-blowing",
+    "image": "st.jpg",
+    "name": "ST high speed blown film machine",
+    "short": {
+      "en": "High-speed blown film with groove feeder",
+      "ar": "نفخ أفلام عالي السرعة مع مغذٍّ مخدد"
+    },
+    "headline": {
+      "en": "Film up to 1400 mm",
+      "ar": "فيلم حتى 1400 مم"
+    },
+    "models": {
+      "en": "Models ST45-800 · ST55-1100 · ST65-1300 · ST65-1500",
+      "ar": "الموديلات ST45-800 · ST55-1100 · ST65-1300 · ST65-1500"
+    },
+    "features": {
+      "en": [
+        "Advanced screw design and groove feeder",
+        "Unique die head and air ring",
+        "For T-shirt, shopping and agricultural film"
+      ],
+      "ar": [
+        "تصميم برغي متطور ومغذٍّ مخدد",
+        "رأس قالب وحلقة هوائية مميزة",
+        "لأكياس الفانيلة والتسوق والأفلام الزراعية"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Max film width",
+          "ar": "أقصى عرض للفيلم"
+        },
+        "value": {
+          "en": "700 – 1400 mm",
+          "ar": "700 – 1400 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Roll width",
+          "ar": "عرض الرول"
+        },
+        "value": {
+          "en": "800 – 1500 mm",
+          "ar": "800 – 1500 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "φ45 – φ65",
+          "ar": "φ45 – φ65"
+        }
+      },
+      {
+        "label": {
+          "en": "Max power",
+          "ar": "أقصى قدرة"
+        },
+        "value": {
+          "en": "39 – 90 kW",
+          "ar": "39 – 90 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ST-TD",
+    "slug": "st-td",
+    "category": "film-blowing",
+    "image": "sttd.jpg",
+    "name": "ST-TD high speed two-head blown film machine",
+    "short": {
+      "en": "Two heads — two film rolls at once",
+      "ar": "برأسين — رولان من الفيلم في آن واحد"
+    },
+    "headline": {
+      "en": "80 – 160 kg/h",
+      "ar": "80 – 160 كغ/ساعة"
+    },
+    "models": {
+      "en": "Models ST55500-TD · ST55600-TD · ST65650-TD",
+      "ar": "الموديلات ST55500-TD · ST55600-TD · ST65650-TD"
+    },
+    "features": {
+      "en": [
+        "Produces 2 rolls of different widths at the same time",
+        "Space saving, good output for small rolls",
+        "Flexible HDPE / LDPE change"
+      ],
+      "ar": [
+        "تنتج رولين بعرضين مختلفين في الوقت نفسه",
+        "توفر المساحة وإنتاجية جيدة للرولات الصغيرة",
+        "مرونة في التحويل بين HDPE و LDPE"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "Φ55 – Φ65",
+          "ar": "Φ55 – Φ65"
+        }
+      },
+      {
+        "label": {
+          "en": "Max film width",
+          "ar": "أقصى عرض للفيلم"
+        },
+        "value": {
+          "en": "2 × 400 – 2 × 600 mm",
+          "ar": "2 × 400 – 2 × 600 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Max output",
+          "ar": "أقصى إنتاجية"
+        },
+        "value": {
+          "en": "80 – 160 kg/h",
+          "ar": "80 – 160 كغ/ساعة"
+        }
+      }
+    ]
+  },
+  {
+    "code": "AN/BN",
+    "slug": "an-bn",
+    "category": "flexo-printing",
+    "image": "anbn.jpg",
+    "name": "AN & BN series standard flexographic printing machine",
+    "short": {
+      "en": "Standard stack flexo, 1 – 6 colours",
+      "ar": "طباعة فلكسو متراصة قياسية، 1 – 6 ألوان"
+    },
+    "headline": {
+      "en": "20 – 80 m/min",
+      "ar": "20 – 80 م/دقيقة"
+    },
+    "models": {
+      "en": "1, 2 colour in-line · 4, 6 colour off-line",
+      "ar": "لون ولونان مدمجة · 4 و6 ألوان منفصلة"
+    },
+    "features": {
+      "en": [
+        "FC-25 cast iron frame, vibration-free at speed",
+        "Timing-belt drive, quiet and precise",
+        "Each colour registered separately while running"
+      ],
+      "ar": [
+        "هيكل من حديد الزهر FC-25 خالٍ من الاهتزاز عند السرعات العالية",
+        "إدارة بسير مسنن، هادئة ودقيقة",
+        "ضبط تسجيل كل لون على حدة أثناء التشغيل"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Printing width",
+          "ar": "عرض الطباعة"
+        },
+        "value": {
+          "en": "600 – 1250 mm",
+          "ar": "600 – 1250 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Repeat length",
+          "ar": "طول التكرار"
+        },
+        "value": {
+          "en": "10\" – 35\"",
+          "ar": "10 – 35 بوصة"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing speed",
+          "ar": "سرعة الطباعة"
+        },
+        "value": {
+          "en": "20 – 80 m/min",
+          "ar": "20 – 80 م/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Colours",
+          "ar": "الألوان"
+        },
+        "value": {
+          "en": "1 · 2 · 4 · 6",
+          "ar": "1 · 2 · 4 · 6"
+        }
+      }
+    ]
+  },
+  {
+    "code": "AD/BD",
+    "slug": "ad-bd",
+    "category": "flexo-printing",
+    "image": "adbd.jpg",
+    "name": "AD & BD series doctor blade flexographic printing machine",
+    "short": {
+      "en": "Doctor-blade flexo, in-line or off-line",
+      "ar": "فلكسو بشفرة دكتور، مدمجة أو منفصلة"
+    },
+    "headline": {
+      "en": "20 – 120 m/min",
+      "ar": "20 – 120 م/دقيقة"
+    },
+    "models": {
+      "en": "4 & 6 colours · in-line / off-line",
+      "ar": "4 و6 ألوان · مدمجة / منفصلة"
+    },
+    "features": {
+      "en": [
+        "Doctor-blade chamber with ceramic anilox roller",
+        "Simple register device for accurate print",
+        "Timing-belt drive"
+      ],
+      "ar": [
+        "حجرة شفرة دكتور مع أسطوانة أنيلوكس سيراميك",
+        "جهاز تسجيل بسيط لطباعة دقيقة",
+        "إدارة بسير مسنن"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Printing width",
+          "ar": "عرض الطباعة"
+        },
+        "value": {
+          "en": "600 – 1250 mm",
+          "ar": "600 – 1250 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Repeat length",
+          "ar": "طول التكرار"
+        },
+        "value": {
+          "en": "10\" – 35\"",
+          "ar": "10 – 35 بوصة"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing speed",
+          "ar": "سرعة الطباعة"
+        },
+        "value": {
+          "en": "20 – 120 m/min",
+          "ar": "20 – 120 م/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Colours",
+          "ar": "الألوان"
+        },
+        "value": {
+          "en": "4 · 6",
+          "ar": "4 · 6"
+        }
+      }
+    ]
+  },
+  {
+    "code": "BDN",
+    "slug": "bdn",
+    "category": "flexo-printing",
+    "image": "bdn.jpg",
+    "name": "BDN series doctor blade flexographic printing machine",
+    "short": {
+      "en": "Doctor-blade flexo with turret unwind/rewind",
+      "ar": "فلكسو بشفرة دكتور مع فك ولف برجي"
+    },
+    "headline": {
+      "en": "20 – 150 m/min",
+      "ar": "20 – 150 م/دقيقة"
+    },
+    "models": {
+      "en": "4, 6 & 8 colours · off-line",
+      "ar": "4 و6 و8 ألوان · منفصلة"
+    },
+    "features": {
+      "en": [
+        "Japanese differential gear for registration",
+        "Turret-type non-stop unwind and rewind",
+        "Harmony synchronous line-speed drive"
+      ],
+      "ar": [
+        "ترس تفاضلي ياباني لضبط التسجيل",
+        "فك ولف برجي دون توقف",
+        "نظام إدارة متزامن لسرعة الخط"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Printing width",
+          "ar": "عرض الطباعة"
+        },
+        "value": {
+          "en": "600 – 1250 mm",
+          "ar": "600 – 1250 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Repeat length",
+          "ar": "طول التكرار"
+        },
+        "value": {
+          "en": "10\" – 35\"",
+          "ar": "10 – 35 بوصة"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing speed",
+          "ar": "سرعة الطباعة"
+        },
+        "value": {
+          "en": "20 – 150 m/min",
+          "ar": "20 – 150 م/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Colours",
+          "ar": "الألوان"
+        },
+        "value": {
+          "en": "4 · 6 · 8",
+          "ar": "4 · 6 · 8"
+        }
+      }
+    ]
+  },
+  {
+    "code": "BDV",
+    "slug": "bdv",
+    "category": "flexo-printing",
+    "image": "bdv.jpg",
+    "name": "BDV series doctor blade flexographic printing machine",
+    "short": {
+      "en": "Premium doctor-blade flexo with print inspection",
+      "ar": "فلكسو متميزة بشفرة دكتور ونظام فحص الطباعة"
+    },
+    "headline": {
+      "en": "20 – 200 m/min",
+      "ar": "20 – 200 م/دقيقة"
+    },
+    "models": {
+      "en": "6 & 8 colours · off-line",
+      "ar": "6 و8 ألوان · منفصلة"
+    },
+    "features": {
+      "en": [
+        "Yaskawa servo main motor, FCD-45 frame",
+        "Mitsubishi PLC with touch-screen HMI",
+        "Sony print inspection system with LCD monitor"
+      ],
+      "ar": [
+        "محرك رئيسي سيرفو Yaskawa وهيكل FCD-45",
+        "وحدة PLC من ميتسوبيشي مع شاشة لمس",
+        "نظام فحص طباعة Sony مع شاشة LCD"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Printing width",
+          "ar": "عرض الطباعة"
+        },
+        "value": {
+          "en": "600 – 1250 mm",
+          "ar": "600 – 1250 مم"
+        }
+      },
+      {
+        "label": {
+          "en": "Repeat length",
+          "ar": "طول التكرار"
+        },
+        "value": {
+          "en": "13\" – 35\"",
+          "ar": "13 – 35 بوصة"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing speed",
+          "ar": "سرعة الطباعة"
+        },
+        "value": {
+          "en": "20 – 200 m/min",
+          "ar": "20 – 200 م/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Colours",
+          "ar": "الألوان"
+        },
+        "value": {
+          "en": "6 · 8",
+          "ar": "6 · 8"
+        }
+      }
+    ]
+  },
+  {
+    "code": "CI",
+    "slug": "ci",
+    "category": "flexo-printing",
+    "image": "ci.jpg",
+    "name": "CI high speed central impression flexo printing machine",
+    "short": {
+      "en": "Central-impression high-speed flexo",
+      "ar": "فلكسو عالية السرعة بالطبع المركزي"
+    },
+    "headline": {
+      "en": "4, 6 & 8 colours",
+      "ar": "4 و6 و8 ألوان"
+    },
+    "models": {
+      "en": "CI high speed 4 · 6 · 8 colours",
+      "ar": "CI عالية السرعة · 4 · 6 · 8 ألوان"
+    },
+    "features": {
+      "en": [
+        "Central impression drum for tight registration",
+        "For films and flexible packaging",
+        "[ADD KEY FEATURES FROM CI SPEC SHEET]"
+      ],
+      "ar": [
+        "أسطوانة طبع مركزية لتسجيل دقيق",
+        "للأفلام والتغليف المرن",
+        "[أضف المزايا الرئيسية من ملف مواصفات CI]"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Colours",
+          "ar": "الألوان"
+        },
+        "value": {
+          "en": "4 · 6 · 8",
+          "ar": "4 · 6 · 8"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing width",
+          "ar": "عرض الطباعة"
+        },
+        "value": {
+          "en": "[FROM SPEC SHEET]",
+          "ar": "[من ملف المواصفات]"
+        }
+      },
+      {
+        "label": {
+          "en": "Printing speed",
+          "ar": "سرعة الطباعة"
+        },
+        "value": {
+          "en": "[FROM SPEC SHEET]",
+          "ar": "[من ملف المواصفات]"
+        }
+      }
+    ]
+  },
+  {
+    "code": "WP/TWP",
+    "slug": "wp-twp",
+    "category": "recycling",
+    "image": "wp.jpg",
+    "name": "1 & 2 stage plastic recycling and pelletizing machine",
+    "short": {
+      "en": "One- and two-stage recycling & pelletizing",
+      "ar": "إعادة تدوير وتحبيب بمرحلة ومرحلتين"
+    },
+    "headline": {
+      "en": "200 – 800 kg/h",
+      "ar": "200 – 800 كغ/ساعة"
+    },
+    "models": {
+      "en": "Models WP85 – WP150 · TWP85 – TWP150",
+      "ar": "الموديلات WP85 – WP150 · TWP85 – TWP150"
+    },
+    "features": {
+      "en": [
+        "HDPE, LDPE, LLDPE, PP, PS, ABS",
+        "Fibres, film, scrap, bottles, flakes and strips",
+        "Two-stage TWP for higher filtration"
+      ],
+      "ar": [
+        "HDPE و LDPE و LLDPE و PP و PS و ABS",
+        "ألياف وأفلام وهالك وعبوات ورقائق وشرائط",
+        "TWP بمرحلتين لترشيح أعلى"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "φ85 – φ150 (TWP: + φ100 – φ165)",
+          "ar": "φ85 – φ150 (TWP: + φ100 – φ165)"
+        }
+      },
+      {
+        "label": {
+          "en": "Output WP",
+          "ar": "إنتاجية WP"
+        },
+        "value": {
+          "en": "200 – 700 kg/h",
+          "ar": "200 – 700 كغ/ساعة"
+        }
+      },
+      {
+        "label": {
+          "en": "Output TWP",
+          "ar": "إنتاجية TWP"
+        },
+        "value": {
+          "en": "250 – 800 kg/h",
+          "ar": "250 – 800 كغ/ساعة"
+        }
+      }
+    ]
+  },
+  {
+    "code": "WPF",
+    "slug": "wpf",
+    "category": "recycling",
+    "image": "wpf.jpg",
+    "name": "Side screw feeder plastic recycling and pelletizing machine",
+    "short": {
+      "en": "Side screw feeder recycling line",
+      "ar": "خط إعادة تدوير بمغذٍّ لولبي جانبي"
+    },
+    "headline": {
+      "en": "250 – 800 kg/h",
+      "ar": "250 – 800 كغ/ساعة"
+    },
+    "models": {
+      "en": "Models WPF85 · WPF100 · WPF120 · WPF150",
+      "ar": "الموديلات WPF85 · WPF100 · WPF120 · WPF150"
+    },
+    "features": {
+      "en": [
+        "Stable high output, non-stop running",
+        "Saves power and material",
+        "Film, sheet, bottles, bags, lumps and yarn"
+      ],
+      "ar": [
+        "إنتاجية عالية ومستقرة وتشغيل متواصل",
+        "توفير في الطاقة والمواد",
+        "أفلام وألواح وعبوات وأكياس وكتل وخيوط"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Screw diameter",
+          "ar": "قطر البرغي"
+        },
+        "value": {
+          "en": "φ85 – φ150",
+          "ar": "φ85 – φ150"
+        }
+      },
+      {
+        "label": {
+          "en": "Max output",
+          "ar": "أقصى إنتاجية"
+        },
+        "value": {
+          "en": "250 – 800 kg/h",
+          "ar": "250 – 800 كغ/ساعة"
+        }
+      },
+      {
+        "label": {
+          "en": "Materials",
+          "ar": "المواد"
+        },
+        "value": {
+          "en": "HDPE, LDPE, LLDPE, PP, BOPP, ABS, PS",
+          "ar": "HDPE، LDPE، LLDPE، PP، BOPP، ABS، PS"
+        }
+      }
+    ]
+  },
+  {
+    "code": "LOG",
+    "slug": "log",
+    "category": "injection-molding",
+    "image": "injection.jpg",
+    "name": "LOG series injection molding machine",
+    "short": {
+      "en": "Toggle-clamp injection molding machines",
+      "ar": "مكائن حقن بلاستيك بقفل الذراع"
+    },
+    "headline": {
+      "en": "LOG90 – LOG2200",
+      "ar": "LOG90 – LOG2200"
+    },
+    "models": {
+      "en": "Models LOG90 – LOG2200",
+      "ar": "الموديلات LOG90 – LOG2200"
+    },
+    "features": {
+      "en": [
+        "Double-cylinder injection unit for steady injection",
+        "Nitrided alloy-steel screw and barrel",
+        "Box-structure toggle clamping with large open area"
+      ],
+      "ar": [
+        "وحدة حقن بأسطوانتين لحقن ثابت",
+        "برغي وأسطوانة من سبائك فولاذية معالجة بالنيترة",
+        "قفل بنظام الذراع بهيكل صندوقي ومساحة فتح كبيرة"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Clamping force",
+          "ar": "قوة القفل"
+        },
+        "value": {
+          "en": "900 – 3000 kN (LOG90 – LOG300)",
+          "ar": "900 – 3000 كيلو نيوتن (LOG90 – LOG300)"
+        }
+      },
+      {
+        "label": {
+          "en": "Screw speed",
+          "ar": "سرعة البرغي"
+        },
+        "value": {
+          "en": "0 – 200 r/min",
+          "ar": "0 – 200 دورة/دقيقة"
+        }
+      },
+      {
+        "label": {
+          "en": "Pump motor",
+          "ar": "محرك المضخة"
+        },
+        "value": {
+          "en": "9 – 22 kW",
+          "ar": "9 – 22 كيلوواط"
+        }
+      },
+      {
+        "label": {
+          "en": "Heating power",
+          "ar": "قدرة التسخين"
+        },
+        "value": {
+          "en": "6.5 – 18 kW",
+          "ar": "6.5 – 18 كيلوواط"
+        }
+      }
+    ]
+  },
+  {
+    "code": "ROTORCOMP",
+    "slug": "rotorcomp",
+    "category": "air-compressors",
+    "image": "compressor.jpg",
+    "name": "ROTORCOMP rotary screw compressor",
+    "short": {
+      "en": "Rotary screw air compressors, EVO technology",
+      "ar": "ضواغط هواء لولبية دوارة بتقنية EVO"
+    },
+    "headline": {
+      "en": "5 – 15 barg",
+      "ar": "5 – 15 بار"
+    },
+    "models": {
+      "en": "ROTORCOMP EVO series",
+      "ar": "سلسلة ROTORCOMP EVO"
+    },
+    "features": {
+      "en": [
+        "German-made air end with rolling profile",
+        "Multi-touch control, automatic start / stop",
+        "IE3 motor, overpressure and temperature protection"
+      ],
+      "ar": [
+        "وحدة ضغط ألمانية الصنع",
+        "تحكم متعدد اللمس وتشغيل وإيقاف تلقائي",
+        "محرك IE3 مع حماية من الضغط والحرارة الزائدين"
+      ]
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Working pressure",
+          "ar": "ضغط التشغيل"
+        },
+        "value": {
+          "en": "5 – 15 barg",
+          "ar": "5 – 15 بار"
+        }
+      },
+      {
+        "label": {
+          "en": "Air end",
+          "ar": "وحدة الضغط"
+        },
+        "value": {
+          "en": "Made in Germany",
+          "ar": "صناعة ألمانية"
+        }
+      },
+      {
+        "label": {
+          "en": "Air filter",
+          "ar": "فلتر الهواء"
+        },
+        "value": {
+          "en": "99.99 % filtration, ISO 5011",
+          "ar": "ترشيح 99.99٪، ISO 5011"
+        }
+      },
+      {
+        "label": {
+          "en": "Oil residue",
+          "ar": "بقايا الزيت"
+        },
+        "value": {
+          "en": "ISO 8573-1 class 3",
+          "ar": "ISO 8573-1 الفئة 3"
+        }
+      }
+    ]
+  }
+]

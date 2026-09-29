@@ -1,0 +1,45 @@
+---
+import type { Lang } from '../data/site';
+import { useT, path } from '../i18n/ui';
+import SectionHead from './SectionHead.astro';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: Lang;
+  /** Short variant for the parts & maintenance page. */
+  compact?: boolean;
+}
+const { lang, compact = false } = Astro.props;
+const t = useT(lang);
+const cards = [
+  { icon: 'calendar', title: t('maint.1'), text: t('maint.1.text'), border: 'border-orange', color: 'text-orange' },
+  { icon: 'wrench', title: t('maint.2'), text: t('maint.2.text'), border: 'border-teal', color: 'text-teal-light' },
+  { icon: 'refresh', title: t('maint.3'), text: t('maint.3.text'), border: 'border-white', color: 'text-white' },
+] as const;
+---
+
+<section id="maintenance" class="bg-ink py-20 text-white lg:py-26">
+  <div class="container-site flex flex-col gap-12">
+    <SectionHead
+      eyebrow={t('maint.eyebrow')}
+      title={compact ? t('pm.maintH2') : t('maint.h2')}
+      lead={compact ? t('pm.maintLead') : t('maint.lead')}
+      dark
+    />
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {
+        cards.map((c) => (
+          <div class:list={['flex flex-col gap-4 rounded-md border-t-4 bg-ink-2 p-8', c.border]}>
+            <Icon name={c.icon} size={36} class={c.color} />
+            <h3 class="display text-[28px]">{c.title}</h3>
+            <p class="leading-relaxed text-on-dark">{c.text}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="flex flex-col items-start justify-between gap-6 rounded-md border border-[#4a4f4c] p-7 md:flex-row md:items-center">
+      <p class="text-lg text-[#e4e6e4]">{t('maint.coverage')}</p>
+      <a href={path(lang, 'parts-maintenance') + '#inquiry'} class="btn btn-primary shrink-0">{t('maint.cta')}</a>
+    </div>
+  </div>
+</section>

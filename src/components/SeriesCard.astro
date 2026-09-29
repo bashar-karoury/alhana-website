@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import type { Lang } from '../data/site';
+import type { Machine } from '../data/machines';
+import { img } from '../lib/images';
+import { useT, path } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  machine: Machine;
+  current?: boolean;
+}
+const { lang, machine: m, current = false } = Astro.props;
+const t = useT(lang);
+---
+
+<a
+  href={path(lang, 'machines', m.category, m.slug)}
+  class:list={[
+    'flex flex-col overflow-hidden rounded-md border-2 bg-white text-ink no-underline transition-colors hover:border-orange hover:text-ink',
+    current ? 'border-orange' : 'border-line',
+  ]}
+  aria-current={current ? 'page' : undefined}
+>
+  <Image src={img(m.image)} alt={`${m.code} — ${m.name}`} widths={[360, 540]} sizes="(min-width: 1024px) 360px, 100vw" class="h-44 w-full object-contain p-4" />
+  <span class="flex flex-col gap-1.5 border-t border-line-2 px-5 pt-4 pb-5">
+    <span class="display text-2xl">{lang === 'ar' ? `${t('series.series')} ${m.code}` : `${m.code} ${t('series.series')}`}</span>
+    <span class="text-[15px] leading-snug text-muted">{m.short[lang]}</span>
+    <span class="text-sm font-semibold text-teal-dark">{m.headline[lang]}</span>
+  </span>
+</a>

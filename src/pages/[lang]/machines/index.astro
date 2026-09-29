@@ -1,0 +1,46 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CatalogLayout from '../../../components/CatalogLayout.astro';
+import SeriesCard from '../../../components/SeriesCard.astro';
+import Icon from '../../../components/Icon.astro';
+import type { Lang } from '../../../data/site';
+import { categories } from '../../../data/categories';
+import { machinesIn } from '../../../data/machines';
+import { useT, path, langPaths, seriesCount } from '../../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+---
+
+<Base lang={lang} title={t('cat.title')} description={t('cat.desc')} slug="machines/" active="machines">
+  <CatalogLayout lang={lang} eyebrow={t('cat.eyebrow')} title={t('cat.h1')} lead={t('cat.lead')}>
+    {
+      categories.map((c) => {
+        const list = machinesIn(c.slug);
+        return (
+          <section class="flex flex-col gap-5" aria-labelledby={`cat-${c.slug}`}>
+            <div class="flex items-baseline justify-between gap-4">
+              <h2 id={`cat-${c.slug}`} class="display text-3xl">
+                <a href={path(lang, 'machines', c.slug)} class="text-ink no-underline hover:text-teal-dark">
+                  {c.name[lang]}
+                </a>
+              </h2>
+              <a href={path(lang, 'machines', c.slug)} class="flex items-center gap-1.5 text-[15px] font-semibold no-underline">
+                {seriesCount(lang, list.length)}
+                <Icon name="chevron" size={16} />
+              </a>
+            </div>
+            <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+              {list.map((m) => (
+                <li>
+                  <SeriesCard lang={lang} machine={m} />
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })
+    }
+  </CatalogLayout>
+</Base>

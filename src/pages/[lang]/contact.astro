@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import type { Lang } from '../../data/site';
+import { useT, langPaths } from '../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+---
+
+<Base lang={lang} title={t('contact.title')} description={t('contact.desc')} slug="contact/" active="contact">
+  <ContactSection lang={lang} headingLevel="h1" />
+</Base>

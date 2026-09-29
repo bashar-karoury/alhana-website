@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { dir } from '../i18n/ui';
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import { organization } from '../lib/schema';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  slug: string;
+  image?: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+  active?: 'home' | 'machines' | 'parts' | 'contact';
+  waTopic?: string;
+}
+const { lang, title, description, slug, image, noindex, jsonLd = [], active, waTopic } = Astro.props;
+const org = organization(new URL('/logo.png', site.url).href);
+---
+
+<!doctype html>
+<html lang={lang} dir={dir(lang)}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#232527" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/logo.svg" as="image" type="image/svg+xml" />
+    <SEO lang={lang} title={title} description={description} slug={slug} image={image} noindex={noindex} jsonLd={[org, ...jsonLd]} />
+  </head>
+  <body>
+    <Header lang={lang} slug={slug} active={active} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+    <WhatsAppButton lang={lang} topic={waTopic} />
+  </body>
+</html>

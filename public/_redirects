@@ -1,0 +1,4 @@
+# Short links without the language prefix go to the Arabic site.
+/machines/*           /ar/machines/:splat           301
+/parts-maintenance/   /ar/parts-maintenance/        301
+/contact/             /ar/contact/                  301

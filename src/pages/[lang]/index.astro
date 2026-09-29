@@ -1,0 +1,235 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import Maintenance from '../../components/Maintenance.astro';
+import PartsGrid from '../../components/PartsGrid.astro';
+import ContactSection from '../../components/ContactSection.astro';
+import Icon from '../../components/Icon.astro';
+import type { Lang } from '../../data/site';
+import { site } from '../../data/site';
+import { categories } from '../../data/categories';
+import { machinesIn, getMachine } from '../../data/machines';
+import { img } from '../../lib/images';
+import { useT, path, langPaths, seriesCount, type UIKey } from '../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+
+const line = [
+  { n: '01', title: t('line.1'), note: t('line.1.note'), image: 'gb.jpg', color: 'border-[#3b9a4a]', cat: 'film-blowing' },
+  { n: '02', title: t('line.2'), note: t('line.2.note'), image: 'adbd.jpg', color: 'border-[#c8322d]', cat: 'flexo-printing' },
+  { n: '03', title: t('line.3'), note: t('line.3.note'), image: 'esv.jpg', color: 'border-teal', cat: 'bag-making' },
+  { n: '04', title: t('line.4'), note: t('line.4.note'), image: 'wpf.jpg', color: 'border-orange', cat: 'recycling' },
+];
+const esv = getMachine('esv');
+const esvRows = [
+  ['ESV-20', '80–460'],
+  ['ESV-32', '80–760'],
+  ['ESV-42', '80–1000'],
+];
+const mm = lang === 'ar' ? 'مم' : 'mm';
+const pcs = lang === 'ar' ? 'قطعة/دقيقة' : 'pcs/min';
+const th = lang === 'ar' ? ['الموديل', 'طول الكيس', 'السرعة', 'السماكة'] : ['Model', 'Bag length', 'Speed', 'Thickness'];
+---
+
+<Base lang={lang} title={t('home.title')} description={t('home.desc')} slug="" active="home">
+  <!-- HERO -->
+  <section class="overflow-hidden bg-ink text-white">
+    <div class="container-site grid grid-cols-1 items-center gap-12 py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+      <div class="flex flex-col gap-7">
+        <p class="eyebrow flex items-center gap-3 text-teal-light">
+          <span class="h-[3px] w-8 bg-orange"></span>{t('hero.eyebrow')}
+        </p>
+        <h1 class="display text-5xl lg:text-[84px] lg:leading-[0.95] rtl:lg:text-[64px]">{t('hero.h1')}</h1>
+        <p class="max-w-[520px] text-lg leading-relaxed text-on-dark lg:text-xl">{t('hero.lead')}</p>
+        <div class="mt-2 flex flex-wrap gap-4">
+          <a href={path(lang, 'machines')} class="btn btn-primary min-h-14 px-7 text-[17px]">
+            {t('hero.cta')}<Icon name="arrow" />
+          </a>
+          <a href={path(lang, 'contact')} class="btn btn-outline-light min-h-14 px-7 text-[17px]">{t('hero.quote')}</a>
+        </div>
+      </div>
+      <div class="relative h-[300px] sm:h-[420px] lg:h-[500px]">
+        <div class="absolute inset-0 rounded bg-white [clip-path:polygon(10%_0,100%_0,100%_100%,0_100%)] rtl:[clip-path:polygon(0_0,90%_0,100%_100%,0_100%)]"></div>
+        <Image
+          src={img('ci.jpg')}
+          alt={t('hero.alt')}
+          widths={[560, 840, 1120]}
+          sizes="(min-width: 1024px) 560px, 100vw"
+          loading="eager"
+          fetchpriority="high"
+          class="absolute inset-y-[6%] start-[8%] h-[88%] w-[88%] object-contain"
+        />
+        <p class="display absolute start-0 bottom-6 -skew-x-8 bg-teal px-5 py-3 text-lg font-semibold text-white lg:-start-6 lg:text-[22px] rtl:skew-x-8">
+          {t('hero.badge')}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="bg-white py-20 lg:py-26">
+    <div class="container-site flex flex-col gap-12">
+      <SectionHead eyebrow={t('cats.eyebrow')} title={t('cats.h2')}>
+        <a href={path(lang, 'machines')} class="flex items-center gap-2 py-3 text-[17px] font-semibold no-underline">
+          {t('cats.all')}<Icon name="arrow" />
+        </a>
+      </SectionHead>
+      <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          categories.map((c) => {
+            const list = machinesIn(c.slug);
+            return (
+              <li>
+                <a href={path(lang, 'machines', c.slug)} class="flex h-full flex-col overflow-hidden rounded-md border border-line bg-white text-ink no-underline hover:border-orange hover:text-ink">
+                  <div class="relative h-64 bg-[#f7f8f6]">
+                    <Image src={img(c.image)} alt={c.name[lang]} widths={[360, 540]} sizes="(min-width: 1024px) 384px, 100vw" class="h-full w-full object-contain p-5 mix-blend-multiply" />
+                    <span class="eyebrow absolute start-0 top-5 px-5 py-1.5 text-[13px] text-white" style={`background:${c.color}`}>
+                      {seriesCount(lang, list.length)}
+                    </span>
+                  </div>
+                  <div class="flex flex-col gap-2.5 p-6 pb-7">
+                    <h3 class="display text-3xl">{c.name[lang]}</h3>
+                    <p class="leading-relaxed text-muted">{c.desc[lang]}</p>
+                    <p class="text-sm font-semibold text-teal-dark rtl:text-right" dir="ltr">{list.map((m) => m.code).join(' · ')}</p>
+                  </div>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRODUCTION LINE -->
+  <section class="py-20 lg:py-26">
+    <div class="container-site flex flex-col gap-14">
+      <SectionHead eyebrow={t('line.eyebrow')} title={t('line.h2')} lead={t('line.lead')} />
+      <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          line.map((s) => (
+            <li>
+              <a href={path(lang, 'machines', s.cat)} class:list={['flex h-full flex-col overflow-hidden rounded-md border-t-4 bg-white text-ink no-underline hover:text-ink', s.color]}>
+                <Image src={img(s.image)} alt={s.title} widths={[280, 420]} sizes="280px" class="h-60 w-full object-contain p-4" />
+                <div class="flex flex-col gap-2 border-t border-line-2 p-6">
+                  <span class="font-display text-lg font-semibold text-subtle">{s.n}</span>
+                  <h3 class="display text-[28px]">{s.title}</h3>
+                  <p class="leading-relaxed text-muted">{s.note}</p>
+                </div>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!-- SPOTLIGHT -->
+  <section class="bg-teal-dark py-20 text-white lg:py-26">
+    <div class="container-site grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div class="flex h-[300px] items-center rounded-md bg-white p-8 lg:h-[460px]">
+        <Image src={img(esv.image)} alt={`ESV — ${esv.name}`} widths={[560, 840]} sizes="(min-width: 1024px) 560px, 100vw" class="h-full w-full object-contain" />
+      </div>
+      <div class="flex flex-col gap-6">
+        <p class="eyebrow text-peach">{t('spot.eyebrow')}</p>
+        <h2 class="display text-4xl lg:text-[52px] rtl:text-right" lang="en" dir="ltr">High-speed cutting &amp; sealing with double photocell</h2>
+        <p class="text-lg leading-relaxed text-[#d5ebe7]">{t('spot.lead')}</p>
+        <table class="w-full border-collapse text-base">
+          <thead>
+            <tr class="eyebrow text-start text-[13px] text-peach">
+              {th.map((h) => <th class="py-2.5 text-start font-semibold">{h}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {
+              esvRows.map(([model, len]) => (
+                <tr class="border-t border-[#3d8a80] last:border-b">
+                  <td class="py-3 font-semibold">{model}</td>
+                  <td>{len} {mm}</td>
+                  <td>30–180 {pcs}</td>
+                  <td>0.012–0.2 {mm}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+        <div class="flex flex-wrap gap-4">
+          <a href={path(lang, 'machines', 'bag-making', 'esv')} class="btn bg-white text-teal-dark hover:bg-ground">{t('spot.full')}</a>
+          <a href={path(lang, 'contact')} class="btn border-[1.5px] border-[#8cc7be] text-white hover:text-white">{t('spot.price')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPARE PARTS -->
+  <section id="parts" class="py-20 lg:py-26">
+    <div class="container-site grid grid-cols-1 items-center gap-12 lg:grid-cols-[420px_minmax(0,1fr)] lg:gap-16">
+      <div class="flex flex-col gap-5">
+        <p class="eyebrow text-teal-dark">{t('parts.eyebrow')}</p>
+        <h2 class="display text-4xl lg:text-[52px]">{t('parts.h2')}</h2>
+        <p class="text-lg leading-relaxed text-muted">{t('parts.lead')}</p>
+        <a href={path(lang, 'parts-maintenance') + '#inquiry'} class="btn btn-dark mt-2 self-start">
+          {t('parts.cta')}<Icon name="arrow" />
+        </a>
+      </div>
+      <div class="flex flex-col gap-3.5">
+        <p class="eyebrow text-[13px] text-subtle">{t('parts.examples')}</p>
+        <PartsGrid limit={6} cols={3} />
+      </div>
+    </div>
+  </section>
+
+  <Maintenance lang={lang} />
+
+  <!-- ABOUT -->
+  <section id="about" class="bg-white py-20 lg:py-24">
+    <div class="container-site flex flex-col gap-14">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+        <div class="flex flex-col gap-5">
+          <p class="eyebrow text-teal-dark">{t('about.eyebrow')}</p>
+          <h2 class="display text-4xl lg:text-[44px]">{t('about.h2')}</h2>
+          <p class="flex items-end gap-3 border-s-4 border-orange ps-4">
+            <span class="font-display text-6xl leading-none font-bold text-ink" dir="ltr">{site.yearsInBusiness}</span>
+            <span class="pb-1 font-semibold text-muted">{t('about.years')}</span>
+          </p>
+          <p class="text-sm font-semibold text-subtle">{site.name[lang]} · {site.trading[lang]}</p>
+        </div>
+        <div class="flex flex-col gap-5 text-lg leading-relaxed text-body lg:col-span-2">
+          <p>{t('about.story')}</p>
+          <p>{t('about.story2')}</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div class="flex flex-col gap-3 rounded-md bg-ground p-8">
+          <h3 class="display text-3xl text-teal-dark">{t('about.vision')}</h3>
+          <p class="leading-relaxed text-body">{t('about.vision.text')}</p>
+        </div>
+        <div class="flex flex-col gap-3 rounded-md bg-ground p-8">
+          <h3 class="display text-3xl text-teal-dark">{t('about.mission')}</h3>
+          <p class="leading-relaxed text-body">{t('about.mission.text')}</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+        {
+          [
+            ['about.1', 'about.1.text', 'border-teal'],
+            ['about.2', 'about.2.text', 'border-orange'],
+            ['about.3', 'about.3.text', 'border-ink'],
+          ].map(([h, p, b]) => (
+            <div class:list={['flex flex-col gap-2.5 border-t-[3px] pt-5', b]}>
+              <h3 class="display text-2xl">{t(h as UIKey)}</h3>
+              <p class="leading-relaxed text-muted">{t(p as UIKey)}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <ContactSection lang={lang} />
+</Base>

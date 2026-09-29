@@ -1,0 +1,29 @@
+---
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { useT } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: Lang;
+  /** What the prefilled message asks about, e.g. a machine name. */
+  topic?: string;
+}
+const { lang, topic } = Astro.props;
+const t = useT(lang);
+const text = `${t('wa.text')} ${topic ?? t('wa.general')}`;
+---
+
+{
+  site.whatsapp && (
+    <a
+      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(text)}`}
+      target="_blank"
+      rel="noopener"
+      aria-label={t('wa.label')}
+      class="fixed bottom-5 end-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#1f9d55] text-white shadow-lg hover:bg-[#178a49] hover:text-white"
+    >
+      <Icon name="whatsapp" size={30} />
+    </a>
+  )
+}

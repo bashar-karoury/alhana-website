@@ -1,0 +1,51 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHead from '../../components/SectionHead.astro';
+import PartsGrid from '../../components/PartsGrid.astro';
+import Maintenance from '../../components/Maintenance.astro';
+import InquiryForm from '../../components/InquiryForm.astro';
+import type { Lang } from '../../data/site';
+import { site } from '../../data/site';
+import { useT, langPaths } from '../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+---
+
+<Base lang={lang} title={t('pm.title')} description={t('pm.desc')} slug="parts-maintenance/" image="p_screw.jpg" active="parts">
+  <section class="bg-ink text-white">
+    <div class="container-site flex flex-col justify-between gap-6 py-12 lg:flex-row lg:items-end lg:gap-12 lg:py-16">
+      <div class="flex flex-col gap-3.5">
+        <p class="eyebrow text-teal-light">{t('pm.eyebrow')}</p>
+        <h1 class="display text-5xl lg:text-7xl rtl:lg:text-6xl">{t('pm.h1')}</h1>
+      </div>
+      <p class="max-w-[480px] text-lg leading-relaxed text-on-dark">{t('pm.lead')}</p>
+    </div>
+  </section>
+
+  <section id="parts" class="py-16 lg:py-20">
+    <div class="container-site flex flex-col gap-9">
+      <SectionHead eyebrow={t('parts.eyebrow')} title={t('pm.partsH2')} lead={t('pm.partsLead')} />
+      <p class="eyebrow text-[13px] text-subtle">{t('parts.examples')}</p>
+      <PartsGrid />
+    </div>
+  </section>
+
+  <Maintenance lang={lang} compact />
+
+  <section id="inquiry" class="bg-white py-16 lg:py-20">
+    <div class="container-site grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-18">
+      <div class="flex flex-col gap-5">
+        <p class="eyebrow text-teal-dark">{t('pm.inquiry')}</p>
+        <h2 class="display text-4xl lg:text-[52px]">{t('pm.inquiryH2')}</h2>
+        <p class="text-lg leading-relaxed text-muted">{t('pm.inquiryLead')}</p>
+        <div class="mt-2 flex flex-col gap-3 text-[17px] font-semibold">
+          <a href={site.phoneHref} class="no-underline rtl:text-right" dir="ltr">{site.phone}</a>
+          <a href={`mailto:${site.email}`} class="no-underline">{site.email}</a>
+        </div>
+      </div>
+      <InquiryForm lang={lang} variant="service" class="bg-ground" />
+    </div>
+  </section>
+</Base>

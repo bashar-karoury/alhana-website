@@ -1,0 +1,119 @@
+---
+import { Image, getImage } from 'astro:assets';
+import Base from '../../../../layouts/Base.astro';
+import CatalogLayout from '../../../../components/CatalogLayout.astro';
+import SeriesCard from '../../../../components/SeriesCard.astro';
+import InquiryForm from '../../../../components/InquiryForm.astro';
+import Icon from '../../../../components/Icon.astro';
+import type { Lang } from '../../../../data/site';
+import { site } from '../../../../data/site';
+import { getCategory } from '../../../../data/categories';
+import { machines, machinesIn } from '../../../../data/machines';
+import { img } from '../../../../lib/images';
+import { useT, path, langs } from '../../../../i18n/ui';
+import { breadcrumbs, product } from '../../../../lib/schema';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) => machines.map((m) => ({ params: { lang, category: m.category, series: m.slug }, props: { m } })));
+}
+const { m } = Astro.props;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+const cat = getCategory(m.category);
+const related = machinesIn(cat.slug).filter((x) => x.slug !== m.slug);
+const pagePath = path(lang, 'machines', cat.slug, m.slug);
+const abs = (href: string) => new URL(href, site.url).href;
+const crumbs = [
+  { name: t('crumb.home'), href: path(lang) },
+  { name: t('nav.machines'), href: path(lang, 'machines') },
+  { name: cat.name[lang], href: path(lang, 'machines', cat.slug) },
+  { name: m.code, href: pagePath },
+];
+const hero = await getImage({ src: img(m.image), width: 1200, format: 'jpeg' });
+const title = `${m.code} ${m.name}`;
+const description = `${m.code}: ${m.short[lang]}. ${m.features[lang].slice(0, 2).join('. ')}. ${m.models[lang]}.`;
+const seriesLabel = lang === 'ar' ? `${t('series.series')} ${m.code}` : `${m.code} ${t('series.series')}`;
+---
+
+<Base
+  lang={lang}
+  title={title}
+  description={description}
+  slug={`machines/${cat.slug}/${m.slug}/`}
+  image={m.image}
+  active="machines"
+  waTopic={`${m.code} — ${m.name}`}
+  jsonLd={[product(m, lang, cat, abs(pagePath), abs(hero.src)), breadcrumbs(crumbs.map((c) => ({ name: c.name, url: abs(c.href) })))]}
+>
+  <CatalogLayout lang={lang} eyebrow={cat.name[lang]} title={seriesLabel} activeCategory={cat.slug} crumbs={crumbs}>
+    <article class="grid grid-cols-1 overflow-hidden rounded-md bg-white lg:grid-cols-2">
+      <div class="relative flex min-h-[320px] items-center justify-center border-line-2 p-10 lg:min-h-[460px] lg:border-e">
+        <Image src={img(m.image)} alt={`${m.code} — ${m.name}`} widths={[480, 720, 960]} sizes="(min-width: 1024px) 460px, 100vw" loading="eager" class="max-h-[380px] w-full object-contain" />
+        <span class="display absolute start-0 top-6 px-5 py-2 text-xl tracking-wide text-white" style={`background:${cat.color}`}>{seriesLabel}</span>
+      </div>
+      <div class="flex flex-col gap-5 p-6 sm:p-10">
+        <p class="eyebrow text-[13px] text-teal-dark" dir="auto">{m.models[lang]}</p>
+        <!-- machine names stay in English on both language versions -->
+        <h2 class="display text-3xl lg:text-[38px] rtl:text-right" lang="en" dir="ltr">{m.name}</h2>
+        <p class="text-lg text-muted">{m.short[lang]}</p>
+        <h3 class="sr-only">{t('series.features')}</h3>
+        <ul class="flex list-disc flex-col gap-1.5 ps-5 leading-snug text-body">
+          {m.features[lang].map((f) => <li>{f}</li>)}
+        </ul>
+        <h3 class="sr-only">{t('series.specs')}</h3>
+        <table class="w-full border-collapse text-[15px]">
+          <tbody>
+            {
+              m.specs.map((s) => (
+                <tr class="border-t border-line-2">
+                  <th scope="row" class="w-[46%] py-2.5 pe-4 text-start font-medium text-muted">
+                    {s.label[lang]}
+                  </th>
+                  <td class="py-2.5 font-semibold" dir="auto">
+                    {s.value[lang]}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+        <p class="text-sm text-subtle">{t('series.note')}</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#quote" class="btn btn-primary">{t('series.quote')}</a>
+          {
+            site.whatsapp && (
+              <a
+                href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`${t('wa.text')} ${m.code} — ${m.name}`)}`}
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline"
+              >
+                <Icon name="whatsapp" />
+                {t('series.whatsapp')}
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </article>
+
+    <section id="quote">
+      <InquiryForm lang={lang} variant="quote" machine={`${m.code} — ${m.name}`} class="bg-white" />
+    </section>
+
+    {
+      related.length > 0 && (
+        <section class="flex flex-col gap-5">
+          <h2 class="display text-3xl">{t('series.related')}</h2>
+          <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+            {related.map((r) => (
+              <li>
+                <SeriesCard lang={lang} machine={r} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </CatalogLayout>
+</Base>

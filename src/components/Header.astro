@@ -1,0 +1,83 @@
+---
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { useT, path, other } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: Lang;
+  slug: string;
+  active?: 'home' | 'machines' | 'parts' | 'contact';
+}
+const { lang, slug, active } = Astro.props;
+const t = useT(lang);
+const links = [
+  { key: 'home', href: path(lang), label: t('nav.home') },
+  { key: 'machines', href: path(lang, 'machines'), label: t('nav.machines') },
+  { key: 'parts', href: path(lang, 'parts-maintenance'), label: t('nav.parts') },
+  { key: 'about', href: path(lang) + '#about', label: t('nav.about') },
+  { key: 'contact', href: path(lang, 'contact'), label: t('nav.contact') },
+];
+const switchHref = `/${other(lang)}/${slug}`;
+---
+
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:bg-white focus:p-3">
+  {t('nav.skip')}
+</a>
+<header class="sticky top-0 z-40 border-b border-line bg-white">
+  <div class="container-site flex h-[92px] items-center justify-between gap-6 lg:h-[144px]">
+    <a href={path(lang)} class="flex shrink-0 items-center" aria-label={site.name[lang]}>
+      <img src="/logo.svg" alt={site.name[lang]} width="268" height="116" class="h-[68px] w-auto lg:h-[116px]" fetchpriority="high" />
+    </a>
+
+    <nav aria-label={t('nav.menu')} class="hidden items-center gap-8 text-base font-semibold whitespace-nowrap xl:flex">
+      {
+        links.map((l) => (
+          <a
+            href={l.href}
+            class:list={['py-3 text-ink no-underline hover:text-teal-dark', active === l.key && 'border-b-[3px] border-orange']}
+            aria-current={active === l.key ? 'page' : undefined}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2 lg:gap-5">
+      <a
+        href={switchHref}
+        hreflang={other(lang)}
+        lang={other(lang)}
+        aria-label={t('nav.switchLabel')}
+        class:list={[
+          'flex min-h-11 items-center px-2 font-semibold no-underline',
+          lang === 'en' ? "font-['IBM_Plex_Sans_Arabic'] text-base" : 'font-[Barlow] text-base',
+        ]}
+      >
+        {t('nav.switch')}
+      </a>
+      <a href={site.phoneHref} class="btn btn-primary hidden whitespace-nowrap xl:inline-flex" dir="ltr">
+        <Icon name="phone" />
+        {site.phone}
+      </a>
+      <a href={site.phoneHref} class="btn btn-primary min-h-11 w-11 px-0 xl:hidden" aria-label={site.phone}>
+        <Icon name="phone" size={20} />
+      </a>
+      <details class="group relative xl:hidden">
+        <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center text-ink [&::-webkit-details-marker]:hidden" aria-label={t('nav.menu')}>
+          <Icon name="menu" size={24} />
+        </summary>
+        <nav aria-label={t('nav.menu')} class="absolute end-0 top-14 flex w-64 flex-col rounded-md border border-line bg-white py-2 shadow-lg">
+          {
+            links.map((l) => (
+              <a href={l.href} class="px-5 py-3 font-semibold text-ink no-underline hover:bg-ground" aria-current={active === l.key ? 'page' : undefined}>
+                {l.label}
+              </a>
+            ))
+          }
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>

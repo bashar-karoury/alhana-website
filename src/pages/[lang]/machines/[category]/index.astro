@@ -1,0 +1,48 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import CatalogLayout from '../../../../components/CatalogLayout.astro';
+import SeriesCard from '../../../../components/SeriesCard.astro';
+import type { Lang } from '../../../../data/site';
+import { site } from '../../../../data/site';
+import { categories, getCategory } from '../../../../data/categories';
+import { machinesIn } from '../../../../data/machines';
+import { useT, path, langs, seriesCount } from '../../../../i18n/ui';
+import { breadcrumbs } from '../../../../lib/schema';
+
+export function getStaticPaths() {
+  return langs.flatMap((lang) => categories.map((c) => ({ params: { lang, category: c.slug } })));
+}
+const lang = Astro.params.lang as Lang;
+const cat = getCategory(Astro.params.category!);
+const t = useT(lang);
+const list = machinesIn(cat.slug);
+const crumbs = [
+  { name: t('crumb.home'), href: path(lang) },
+  { name: t('nav.machines'), href: path(lang, 'machines') },
+  { name: cat.name[lang], href: path(lang, 'machines', cat.slug) },
+];
+const abs = (href: string) => new URL(href, site.url).href;
+const description = `${cat.desc[lang]} ${list.map((m) => m.code).join(', ')}.`;
+---
+
+<Base
+  lang={lang}
+  title={cat.seoTitle[lang]}
+  description={description}
+  slug={`machines/${cat.slug}/`}
+  image={cat.image}
+  active="machines"
+  jsonLd={[breadcrumbs(crumbs.map((c) => ({ name: c.name, url: abs(c.href) })))]}
+>
+  <CatalogLayout lang={lang} eyebrow={seriesCount(lang, list.length)} title={cat.seoTitle[lang]} lead={cat.desc[lang]} activeCategory={cat.slug} crumbs={crumbs}>
+    <ul class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {
+        list.map((m) => (
+          <li>
+            <SeriesCard lang={lang} machine={m} />
+          </li>
+        ))
+      }
+    </ul>
+  </CatalogLayout>
+</Base>

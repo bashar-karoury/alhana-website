@@ -1,0 +1,82 @@
+---
+// Shared shell for the catalogue pages: dark title band + category sidebar + content slot.
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { categories } from '../data/categories';
+import { machinesIn } from '../data/machines';
+import { useT, path } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  activeCategory?: string;
+  crumbs?: { name: string; href: string }[];
+}
+const { lang, eyebrow, title, lead, activeCategory, crumbs = [] } = Astro.props;
+const t = useT(lang);
+---
+
+<section class="bg-ink text-white">
+  <div class="container-site flex flex-col gap-6 py-12 lg:py-16">
+    {
+      crumbs.length > 0 && (
+        <nav aria-label="Breadcrumb" class="text-sm text-on-dark">
+          <ol class="flex flex-wrap items-center gap-2">
+            {crumbs.map((c, i) => (
+              <li class="flex items-center gap-2">
+                {i > 0 && <span aria-hidden="true">/</span>}
+                <a href={c.href} class="text-on-dark no-underline hover:text-white">
+                  {c.name}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
+    <div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end lg:gap-12">
+      <div class="flex flex-col gap-3.5">
+        <p class="eyebrow text-teal-light">{eyebrow}</p>
+        <h1 class="display text-5xl lg:text-7xl rtl:lg:text-6xl"><slot name="title">{title}</slot></h1>
+      </div>
+      {lead && <p class="max-w-[480px] text-lg leading-relaxed text-on-dark">{lead}</p>}
+    </div>
+  </div>
+</section>
+
+<div class="container-site grid grid-cols-1 items-start gap-12 py-14 lg:grid-cols-[260px_minmax(0,1fr)] lg:pb-24">
+  <aside class="flex flex-col gap-1.5 lg:sticky lg:top-44">
+    <h2 class="eyebrow pb-3 text-[13px] text-subtle">{t('cat.categories')}</h2>
+    <nav aria-label={t('cat.categories')} class="flex gap-1.5 overflow-x-auto pb-2 lg:flex-col lg:overflow-visible lg:pb-0">
+      {
+        categories.map((c) => {
+          const on = c.slug === activeCategory;
+          return (
+            <a
+              href={path(lang, 'machines', c.slug)}
+              aria-current={on ? 'page' : undefined}
+              class:list={[
+                'flex min-h-12 shrink-0 items-center gap-3 rounded px-4 font-semibold no-underline',
+                on ? 'bg-ink text-white hover:text-white' : 'text-ink hover:bg-white hover:text-ink',
+              ]}
+            >
+              <span class="h-2.5 w-2.5 shrink-0 rounded-sm" style={`background:${c.color}`} />
+              <span class="grow whitespace-nowrap">{c.name[lang]}</span>
+              <span class="text-sm font-medium opacity-75">{machinesIn(c.slug).length}</span>
+            </a>
+          );
+        })
+      }
+    </nav>
+    <div class="mt-7 hidden flex-col gap-3 rounded-md bg-white p-6 lg:flex">
+      <p class="display text-[22px]">{t('cat.help')}</p>
+      <p class="text-[15px] leading-relaxed text-muted">{t('cat.helpText')}</p>
+      <a href={`mailto:${site.email}`} class="py-1.5 text-[15px] font-semibold">{site.email}</a>
+    </div>
+  </aside>
+  <div class="flex min-w-0 flex-col gap-10">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,43 @@
+---
+import { getImage } from 'astro:assets';
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { img } from '../lib/images';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  /** Path without the language prefix, e.g. "machines/bag-making/esv/" ('' for home). */
+  slug: string;
+  image?: string;
+  noindex?: boolean;
+  jsonLd?: object[];
+}
+
+const { lang, title, description, slug, image = 'ci.jpg', noindex = false, jsonLd = [] } = Astro.props;
+const url = (l: Lang) => new URL(`/${l}/${slug}`, site.url).href;
+const fullTitle = title.includes(site.name[lang]) ? title : `${title} | ${site.name[lang]}`;
+const og = await getImage({ src: img(image), width: 1200, format: 'jpeg' });
+const ogUrl = new URL(og.src, site.url).href;
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url(lang)} />
+<link rel="alternate" hreflang="ar" href={url('ar')} />
+<link rel="alternate" hreflang="en" href={url('en')} />
+<link rel="alternate" hreflang="x-default" href={url('ar')} />
+{noindex && <meta name="robots" content="noindex, follow" />}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name[lang]} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url(lang)} />
+<meta property="og:image" content={ogUrl} />
+<meta property="og:locale" content={lang === 'ar' ? 'ar_SA' : 'en_US'} />
+<meta property="og:locale:alternate" content={lang === 'ar' ? 'en_US' : 'ar_SA'} />
+<meta name="twitter:card" content="summary_large_image" />
+
+{jsonLd.map((data) => <script type="application/ld+json" set:html={JSON.stringify(data)} />)}

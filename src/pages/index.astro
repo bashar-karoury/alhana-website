@@ -1,0 +1,22 @@
+---
+// Root "/": Cloudflare (functions/index.ts) redirects by browser language.
+// This static page is the no-function fallback: it sends visitors to the Arabic site.
+import { site } from '../data/site';
+---
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name.ar} | {site.name.en}</title>
+    <meta http-equiv="refresh" content="0; url=/ar/" />
+    <link rel="canonical" href={`${site.url}/ar/`} />
+    <link rel="alternate" hreflang="ar" href={`${site.url}/ar/`} />
+    <link rel="alternate" hreflang="en" href={`${site.url}/en/`} />
+    <link rel="alternate" hreflang="x-default" href={`${site.url}/ar/`} />
+  </head>
+  <body>
+    <p><a href="/ar/">{site.name.ar}</a> · <a href="/en/" lang="en">{site.name.en}</a></p>
+  </body>
+</html>

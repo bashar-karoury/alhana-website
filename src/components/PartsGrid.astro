@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import { parts } from '../data/parts';
+import { img } from '../lib/images';
+
+interface Props {
+  /** How many example parts to show. */
+  limit?: number;
+  cols?: 3 | 5;
+}
+const { limit = parts.length, cols = 5 } = Astro.props;
+---
+
+<ul class:list={['grid grid-cols-2 gap-4', cols === 5 ? 'md:grid-cols-3 lg:grid-cols-5' : 'md:grid-cols-3']}>
+  {
+    parts.slice(0, limit).map((p) => (
+      <li class="flex flex-col overflow-hidden rounded-md bg-white">
+        <Image src={img(p.image)} alt={p.name} widths={[240, 360]} sizes="240px" class="h-40 w-full object-contain p-4" />
+        {/* part names stay in English on both language versions */}
+        <span lang="en" class="border-t border-line-2 px-4 pt-3 pb-4 text-[15px] font-semibold">
+          {p.name}
+        </span>
+      </li>
+    ))
+  }
+</ul>

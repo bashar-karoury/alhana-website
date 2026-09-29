@@ -1,0 +1,19 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  dark?: boolean;
+  as?: 'h1' | 'h2';
+}
+const { eyebrow, title, lead, dark = false, as: Tag = 'h2' } = Astro.props;
+---
+
+<div class="flex flex-col justify-between gap-6 lg:flex-row lg:items-end lg:gap-12">
+  <div class="flex max-w-[640px] flex-col gap-3.5">
+    <p class:list={['eyebrow', dark ? 'text-teal-light' : 'text-teal-dark']}>{eyebrow}</p>
+    <Tag class="display text-4xl lg:text-[56px]">{title}</Tag>
+  </div>
+  {lead && <p class:list={['max-w-[440px] text-lg leading-relaxed', dark ? 'text-on-dark' : 'text-muted']}>{lead}</p>}
+  <slot />
+</div>

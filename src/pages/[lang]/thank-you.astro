@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import type { Lang } from '../../data/site';
+import { site } from '../../data/site';
+import { useT, path, langPaths } from '../../i18n/ui';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const t = useT(lang);
+---
+
+<Base lang={lang} title={t('thanks.title')} description={t('thanks.lead')} slug="thank-you/" noindex>
+  <section class="container-site flex min-h-[50vh] flex-col items-start justify-center gap-6 py-20">
+    <h1 class="display text-5xl">{t('thanks.h1')}</h1>
+    <p class="max-w-xl text-lg text-muted">{t('thanks.lead')}</p>
+    <div class="flex flex-wrap gap-4">
+      <a href={path(lang)} class="btn btn-dark">{t('thanks.back')}</a>
+      <a href={site.phoneHref} class="btn btn-outline" dir="ltr">{site.phone}</a>
+    </div>
+  </section>
+</Base>

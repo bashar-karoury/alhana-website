@@ -1,0 +1,6 @@
+# Copy to .dev.vars for `npm run preview` (wrangler). Set the same values in Cloudflare Pages > Settings > Environment variables.
+RESEND_API_KEY=re_xxx
+MAIL_FROM=Al-Hana Website <website@alhanatrading.com.sa>
+MAIL_TO=sales@alhanatrading.com.sa
+# Turnstile test secret (always passes); use the real one in production
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA

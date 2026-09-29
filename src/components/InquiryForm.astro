@@ -1,0 +1,108 @@
+---
+// Posts to the Cloudflare Pages Function at /api/inquiry (functions/api/inquiry.ts).
+import type { Lang } from '../data/site';
+import { useT } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+  variant: 'quote' | 'service';
+  /** Preselect / prefill the machine, e.g. on a series page. */
+  machine?: string;
+  class?: string;
+}
+const { lang, variant, machine, class: cls = '' } = Astro.props;
+const t = useT(lang);
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+const label = 'flex flex-col gap-1.5 text-sm font-semibold';
+const interests = ['opt.bag', 'opt.film', 'opt.print', 'opt.recycle', 'opt.inj', 'opt.air', 'opt.part', 'opt.maint'] as const;
+---
+
+<form method="POST" action="/api/inquiry" class={`flex flex-col gap-5 rounded-md p-6 sm:p-10 ${cls}`} data-inquiry>
+  <input type="hidden" name="lang" value={lang} />
+  <input type="hidden" name="form" value={variant} />
+  <input type="hidden" name="page" value={Astro.url.pathname} />
+  <!-- honeypot: real users never fill this -->
+  <div class="hidden" aria-hidden="true">
+    <label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+  </div>
+
+  {variant === 'quote' && <h2 class="display text-3xl text-ink">{t('form.quote')}</h2>}
+
+  <p class="hidden rounded bg-[#fdecea] p-3 text-sm font-semibold text-[#8a1c14]" data-error role="alert">{t('form.error')}</p>
+
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      variant === 'service' && (
+        <>
+          <label class={label}>
+            {t('form.model')}
+            <input class="field" type="text" name="model" placeholder={t('form.modelPh')} value={machine} dir="auto" />
+          </label>
+          <label class={label}>
+            {t('form.type')}
+            <select class="field" name="interest">
+              <option>{t('opt.part')}</option>
+              <option>{t('opt.maint')}</option>
+            </select>
+          </label>
+        </>
+      )
+    }
+    <label class={label}>
+      {t('form.name')}
+      <input class="field" type="text" name="name" required autocomplete="name" />
+    </label>
+    {
+      variant === 'quote' && (
+        <label class={label}>
+          {t('form.company')}
+          <input class="field" type="text" name="company" autocomplete="organization" />
+        </label>
+      )
+    }
+    <label class={label}>
+      {t('form.phone')}
+      <input class="field rtl:text-right" type="tel" name="phone" required autocomplete="tel" dir="ltr" />
+    </label>
+    <label class={label}>
+      {t('form.email')}
+      <input class="field rtl:text-right" type="email" name="email" autocomplete="email" dir="ltr" />
+    </label>
+    {
+      variant === 'quote' && (
+        <label class={`${label} sm:col-span-2`}>
+          {t('form.interest')}
+          <select class="field" name="interest">
+            {interests.map((k) => (
+              <option>{t(k)}</option>
+            ))}
+          </select>
+        </label>
+      )
+    }
+  </div>
+
+  <label class={label}>
+    {variant === 'quote' ? t('form.produce') : t('form.need')}
+    <textarea class="field py-3" name="message" rows="4" required>{variant === 'quote' && machine ? `${machine}\n` : ''}</textarea>
+  </label>
+
+  {siteKey && <div class="cf-turnstile" data-sitekey={siteKey} data-language={lang} />}
+
+  <button type="submit" class="btn btn-primary min-h-[54px] text-[17px]">
+    {variant === 'quote' ? t('form.send') : t('form.sendInquiry')}
+  </button>
+</form>
+
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />}
+
+<script>
+  // Show the error banner when the function redirects back with ?error=1.
+  if (new URLSearchParams(location.search).has('error')) {
+    document.querySelectorAll<HTMLElement>('[data-inquiry] [data-error]').forEach((el) => el.classList.remove('hidden'));
+  }
+  // Prevent double submits.
+  document.querySelectorAll<HTMLFormElement>('form[data-inquiry]').forEach((f) =>
+    f.addEventListener('submit', () => f.querySelector<HTMLButtonElement>('button[type=submit]')?.setAttribute('disabled', '')),
+  );
+</script>

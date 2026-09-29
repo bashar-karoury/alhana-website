@@ -1,0 +1,107 @@
+@import 'tailwindcss';
+
+@import '@fontsource/barlow/400.css';
+@import '@fontsource/barlow/500.css';
+@import '@fontsource/barlow/600.css';
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/700.css';
+@import '@fontsource/ibm-plex-sans-arabic/400.css';
+@import '@fontsource/ibm-plex-sans-arabic/500.css';
+@import '@fontsource/ibm-plex-sans-arabic/600.css';
+@import '@fontsource/cairo/600.css';
+@import '@fontsource/cairo/700.css';
+
+/* Design tokens taken from the approved canvas */
+@theme {
+  --color-ink: #232527;
+  --color-ink-2: #2f3234;
+  --color-ground: #f2f3f1;
+  --color-line: #dfe2df;
+  --color-line-2: #e6e8e5;
+  --color-muted: #555b57;
+  --color-subtle: #6b716d;
+  --color-body: #3b3f3c;
+  --color-on-dark: #c9cdca;
+  --color-teal: #2a9d8f;
+  --color-teal-dark: #13695e;
+  --color-teal-darker: #0d4b43;
+  --color-teal-light: #6fd1c1;
+  --color-orange: #ee7d1f;
+  --color-peach: #ffd2a8;
+
+  --font-sans: 'Barlow', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', 'Barlow', sans-serif;
+}
+
+/* Arabic: its own faces; no letter-spacing (it breaks joined script) */
+html[lang='ar'] {
+  --font-sans: 'IBM Plex Sans Arabic', 'Barlow', system-ui, sans-serif;
+  --font-display: 'Cairo', 'Barlow Condensed', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* keep in-page anchors clear of the sticky header */
+    scroll-padding-top: 100px;
+  }
+  @media (min-width: 64rem) {
+    html { scroll-padding-top: 152px; }
+  }
+  body {
+    @apply bg-ground font-sans text-ink antialiased;
+  }
+  a {
+    @apply text-teal-dark;
+  }
+  a:hover {
+    @apply text-teal-darker;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-orange);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-10;
+  }
+  .eyebrow {
+    @apply text-sm font-semibold uppercase;
+  }
+  html[lang='en'] .eyebrow {
+    letter-spacing: 0.14em;
+  }
+  .display {
+    @apply font-display font-bold uppercase;
+    line-height: 1;
+  }
+  /* Arabic needs taller lines; overrides the line-height set by text-size utilities */
+  html[lang='ar'] .display {
+    line-height: 1.35 !important;
+  }
+  .btn {
+    @apply inline-flex min-h-12 items-center justify-center gap-2.5 rounded px-6 text-base font-semibold no-underline transition-colors;
+  }
+  /* variants are used together with .btn: class="btn btn-primary" */
+  .btn-primary {
+    @apply bg-orange text-[#1e1f21] hover:bg-[#f39443] hover:text-[#1e1f21];
+  }
+  .btn-dark {
+    @apply bg-ink text-white hover:bg-black hover:text-white;
+  }
+  .btn-outline-light {
+    @apply border-[1.5px] border-subtle text-white hover:border-white hover:text-white;
+  }
+  .btn-outline {
+    @apply border-[1.5px] border-[#b9beba] text-ink hover:border-ink hover:text-ink;
+  }
+  .field {
+    @apply min-h-12 w-full rounded border border-[#b9beba] bg-white px-3.5 text-base font-normal text-ink;
+  }
+  /* mirror directional icons in RTL */
+  html[dir='rtl'] .flip-rtl {
+    transform: scaleX(-1);
+  }
+}

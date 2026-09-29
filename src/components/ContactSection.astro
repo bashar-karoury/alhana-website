@@ -1,0 +1,46 @@
+---
+import type { Lang } from '../data/site';
+import { site } from '../data/site';
+import { useT } from '../i18n/ui';
+import Icon from './Icon.astro';
+import InquiryForm from './InquiryForm.astro';
+
+interface Props {
+  lang: Lang;
+  headingLevel?: 'h1' | 'h2';
+}
+const { lang, headingLevel: H = 'h2' } = Astro.props;
+const t = useT(lang);
+---
+
+<section id="contact" class="bg-ink py-20 text-white lg:py-26">
+  <div class="container-site grid grid-cols-1 gap-14 lg:grid-cols-2 lg:gap-18">
+    <div class="flex flex-col gap-7">
+      <p class="eyebrow text-teal-light">{t('contact.eyebrow')}</p>
+      <H class="display text-4xl lg:text-[56px]">{t('contact.h2')}</H>
+      <p class="text-lg leading-relaxed text-on-dark">{t('contact.lead')}</p>
+      <ul class="mt-2 flex flex-col gap-4 text-lg">
+        <li>
+          <a href={site.phoneHref} class="flex items-center gap-3.5 text-white no-underline hover:text-white">
+            <Icon name="phone" size={22} class="text-orange" /><span dir="ltr">{site.phone}</span>
+          </a>
+        </li>
+        <li>
+          <a href={`mailto:${site.email}`} class="flex items-center gap-3.5 text-white no-underline hover:text-white">
+            <Icon name="mail" size={22} class="text-orange" />{site.email}
+          </a>
+        </li>
+        <li>
+          <a href={site.url} class="flex items-center gap-3.5 text-white no-underline hover:text-white">
+            <Icon name="globe" size={22} class="text-orange" />www.alhanatrading.com.sa
+          </a>
+        </li>
+        <li class="flex items-center gap-3.5 text-on-dark">
+          <Icon name="pin" size={22} class="text-orange" />
+          {site.address.street ? `${site.address.street}, ${site.address.city}` : t('contact.address')}
+        </li>
+      </ul>
+    </div>
+    <InquiryForm lang={lang} variant="quote" class="bg-white text-ink" />
+  </div>
+</section>
