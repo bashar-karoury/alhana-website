@@ -28,9 +28,9 @@ export const organization = (logoUrl: string) => {
     email: site.email,
     address,
     areaServed: 'SA',
-    description: 'Supplier of plastic machinery, spare parts, installation and maintenance in Saudi Arabia with more than 15 years of Taiwanese expertise.',
+    description: 'Supplier of plastic machinery, spare parts, installation and maintenance in Saudi Arabia with more than 20 years of Taiwanese expertise.',
     parentOrganization: { '@type': 'Organization', name: site.trading.en, alternateName: site.trading.ar },
-    knowsAbout: ['Plastic machinery', 'Blown film extrusion', 'Flexographic printing', 'Bag making machines', 'Plastic recycling', 'Injection molding'],
+    knowsAbout: ['Plastic machinery', 'Blown film extrusion', 'Flexographic printing', 'Bag cutting and sealing machines', 'Plastic recycling', 'Injection molding'],
     ...(site.social.length ? { sameAs: site.social } : {}),
   };
 };

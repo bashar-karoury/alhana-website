@@ -37,7 +37,7 @@ const t = useT(lang);
         </li>
         <li class="flex items-center gap-3.5 text-on-dark">
           <Icon name="pin" size={22} class="text-orange" />
-          {site.address.street ? `${site.address.street}, ${site.address.city}` : t('contact.address')}
+          {site.address.display[lang]}
         </li>
       </ul>
     </div>

@@ -68,7 +68,7 @@ The Turnstile variables are optional; without them the form is protected by the 
 These are marked with `[…]` on the site or `TODO` in `src/data/site.ts`:
 
 - WhatsApp number (`site.whatsapp`); the floating WhatsApp button appears once it is set
-- Showroom address (`site.address`) and the map location
+- Map location (Google Maps link) for the showroom
 - Company story (the About section) and service coverage (the Maintenance section)
 - CI printing machine specifications (`machines.json`, code `CI`)
 - Social media links (`site.social`)

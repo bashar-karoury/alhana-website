@@ -11,17 +11,6 @@ export interface Category {
 
 export const categories: Category[] = [
   {
-    slug: 'bag-making',
-    color: '#1f7d71',
-    image: 'sm.jpg',
-    name: { en: 'Bag Making', ar: 'تصنيع الأكياس' },
-    desc: {
-      en: 'T-shirt, bottom-seal, laundry, loop-handle, draw-tape and coreless bags on roll.',
-      ar: 'أكياس الفانيلة واللحام السفلي والغسيل والمقابض والرباط والأكياس على رول بدون كور.',
-    },
-    seoTitle: { en: 'Plastic Bag Making Machines', ar: 'مكائن تصنيع الأكياس البلاستيكية' },
-  },
-  {
     slug: 'film-blowing',
     color: '#2f7d3b',
     image: 'st.jpg',
@@ -33,10 +22,21 @@ export const categories: Category[] = [
     seoTitle: { en: 'Blown Film Extrusion Machines', ar: 'مكائن نفخ الأفلام البلاستيكية' },
   },
   {
+    slug: 'bag-making',
+    color: '#1f7d71',
+    image: 'sm.jpg',
+    name: { en: 'Cutting', ar: 'القص' },
+    desc: {
+      en: 'T-shirt, bottom-seal, laundry, loop-handle, draw-tape and bags on roll.',
+      ar: 'أكياس الفانيلة واللحام السفلي والغسيل والمقابض والرباط والأكياس على رول.',
+    },
+    seoTitle: { en: 'Plastic Bag Cutting & Sealing Machines', ar: 'مكائن قص ولحام الأكياس البلاستيكية' },
+  },
+  {
     slug: 'flexo-printing',
     color: '#b3292a',
     image: 'anbn.jpg',
-    name: { en: 'Flexo Printing', ar: 'الطباعة الفلكسو' },
+    name: { en: 'Printing', ar: 'الطباعة' },
     desc: {
       en: 'Stack and central-impression presses from 1 to 8 colours.',
       ar: 'مكائن طباعة متراصة وبالطبع المركزي من لون واحد حتى 8 ألوان.',
@@ -58,7 +58,7 @@ export const categories: Category[] = [
     slug: 'injection-molding',
     color: '#1f7d71',
     image: 'injection.jpg',
-    name: { en: 'Injection Molding', ar: 'حقن البلاستيك' },
+    name: { en: 'Injection', ar: 'الحقن' },
     desc: {
       en: 'Double-cylinder injection unit and toggle clamping from 900 kN.',
       ar: 'وحدة حقن بأسطوانتين وقفل بنظام الذراع من 900 كيلو نيوتن.',
